@@ -1,6 +1,4 @@
 packages:
   - 'packages/*'
-  - 'apps/*'
-  - 'apis/*'
-  - 'examples/*'
-  - 'scripts'
+  - '!packages/pcsx-sdk'
+  - '!packages/farms'

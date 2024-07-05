@@ -20,9 +20,13 @@ import { scrollSepoliaTokens } from './constants/scrollSepolia'
 import { sepoliaTokens } from './constants/sepolia'
 import { zksyncTokens } from './constants/zkSync'
 import { zkSyncTestnetTokens } from './constants/zkSyncTestnet'
+import { cronosTokens } from './constants/cronos'
+import { cronosTestnetTokens } from './constants/cronosTestnet'
 
 export const allTokens = {
   [ChainId.GOERLI]: goerliTestnetTokens,
+  [ChainId.CRONOS]: cronosTokens,
+  [ChainId.CRONOS_TESTNET]: cronosTestnetTokens,
   [ChainId.BSC]: bscTokens,
   [ChainId.BSC_TESTNET]: bscTestnetTokens,
   [ChainId.ETHEREUM]: ethereumTokens,

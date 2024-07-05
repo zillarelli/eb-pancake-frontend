@@ -1,10 +1,12 @@
 export enum ChainId {
   ETHEREUM = 1,
   GOERLI = 5,
+  CRONOS = 25,
   BSC = 56,
   BSC_TESTNET = 97,
   ZKSYNC_TESTNET = 280,
   ZKSYNC = 324,
+  CRONOS_TESTNET = 338,
   OPBNB_TESTNET = 5611,
   OPBNB = 204,
   POLYGON_ZKEVM = 1101,
@@ -23,6 +25,7 @@ export enum ChainId {
 
 export const testnetChainIds = [
   ChainId.GOERLI,
+  ChainId.CRONOS_TESTNET,
   ChainId.BSC_TESTNET,
   ChainId.ZKSYNC_TESTNET,
   ChainId.OPBNB_TESTNET,

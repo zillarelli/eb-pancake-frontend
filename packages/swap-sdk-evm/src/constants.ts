@@ -23,6 +23,22 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io',
   ),
+  [ChainId.CRONOS]: new ERC20Token(
+    ChainId.CRONOS,
+    '0xe44Fd7fCb2b1581822D0c862B68222998a0c299a',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://weth.io',
+  ),
+  [ChainId.CRONOS_TESTNET]: new ERC20Token(
+    ChainId.CRONOS_TESTNET,
+    '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://ethereum.org',
+  ),
   [ChainId.BSC]: new ERC20Token(
     ChainId.BSC,
     '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
@@ -212,9 +228,38 @@ export const WBNB = {
   ),
 }
 
+export const WCRO = {
+  [ChainId.ETHEREUM]: new ERC20Token(
+    ChainId.ETHEREUM,
+    '0x418D75f65a02b3D53B2418FB8E1fe493759c7605',
+    18,
+    'WCRO',
+    'Wrapped CRO',
+    'https://www.crypto.org',
+  ),
+  [ChainId.CRONOS]: new ERC20Token(
+    ChainId.CRONOS,
+    '0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23',
+    18,
+    'WCRO',
+    'Wrapped CRO',
+    'https://www.crypto.org',
+  ),
+  [ChainId.CRONOS_TESTNET]: new ERC20Token(
+    ChainId.CRONOS_TESTNET,
+    '0x467604E174c87042fcc4412c5BC70AaBc8733016',
+    18,
+    'WCRO',
+    'Wrapped CRO',
+    'https://www.crypto.org',
+  ),
+}
+
 export const WNATIVE = {
   [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
+  [ChainId.CRONOS]: WCRO[ChainId.CRONOS],
+  [ChainId.CRONOS_TESTNET]: WCRO[ChainId.CRONOS_TESTNET],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
   [ChainId.ARBITRUM_ONE]: WETH9[ChainId.ARBITRUM_ONE],
@@ -237,6 +282,12 @@ export const WNATIVE = {
 
 const ETHER = { name: 'Ether', symbol: 'ETH', decimals: 18 } as const
 
+const CRO = {
+  name: 'Cronos Chain Native Token',
+  symbol: 'CRO',
+  decimals: 18,
+} as const
+
 const BNB = {
   name: 'Binance Chain Native Token',
   symbol: 'BNB',
@@ -246,6 +297,12 @@ const BNB = {
 export const NATIVE = {
   [ChainId.ETHEREUM]: ETHER,
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
+  [ChainId.CRONOS]: CRO,
+  [ChainId.CRONOS_TESTNET]: {
+    name: 'Cronos Chain Native Token',
+    symbol: 'tBNB',
+    decimals: 18,
+  },
   [ChainId.BSC]: BNB,
   [ChainId.BSC_TESTNET]: {
     name: 'Binance Chain Native Token',

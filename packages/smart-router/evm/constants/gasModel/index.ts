@@ -9,6 +9,8 @@ import {
   baseTokens,
   bscTestnetTokens,
   bscTokens,
+  cronosTokens,
+  cronosTestnetTokens,
   ethereumTokens,
   goerliTestnetTokens,
   lineaTestnetTokens,
@@ -25,6 +27,8 @@ import {
 export const usdGasTokensByChain = {
   [ChainId.ETHEREUM]: [ethereumTokens.usdt],
   [ChainId.GOERLI]: [goerliTestnetTokens.usdc],
+  [ChainId.CRONOS]: [cronosTokens.usdc],
+  [ChainId.CRONOS_TESTNET]: [cronosTestnetTokens.usdc],
   [ChainId.BSC]: [bscTokens.usdt],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.usdt],
   [ChainId.ARBITRUM_ONE]: [arbitrumTokens.usdc],

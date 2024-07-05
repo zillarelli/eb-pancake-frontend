@@ -13,6 +13,8 @@ import {
   baseTokens,
   bscTestnetTokens,
   bscTokens,
+  cronosTokens,
+  cronosTestnetTokens,
   ethereumTokens,
   lineaTestnetTokens,
   lineaTokens,
@@ -31,6 +33,8 @@ import { ChainMap, ChainTokenList } from '../types'
 export const SMART_ROUTER_ADDRESSES = {
   [ChainId.ETHEREUM]: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
   [ChainId.GOERLI]: '0x9a489505a00cE272eAa5e07Dba6491314CaE3796',
+  [ChainId.CRONOS]: '',
+  [ChainId.CRONOS_TESTNET]: '',
   [ChainId.BSC]: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
   [ChainId.BSC_TESTNET]: '0x9a489505a00cE272eAa5e07Dba6491314CaE3796',
   [ChainId.ARBITRUM_ONE]: '0x32226588378236Fd0c7c4053999F88aC0e5cAc77',
@@ -54,6 +58,8 @@ export const SMART_ROUTER_ADDRESSES = {
 export const V2_ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.ETHEREUM]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
   [ChainId.GOERLI]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
+  [ChainId.CRONOS]: '',
+  [ChainId.CRONOS_TESTNET]: '',
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
   [ChainId.ARBITRUM_ONE]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
@@ -77,6 +83,8 @@ export const V2_ROUTER_ADDRESS: ChainMap<string> = {
 export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
   [ChainId.ETHEREUM]: '',
   [ChainId.GOERLI]: '',
+  [ChainId.CRONOS]: '',
+  [ChainId.CRONOS_TESTNET]: '',
   [ChainId.BSC]: '0xa680d27f63Fa5E213C502d1B3Ca1EB6a3C1b31D6',
   [ChainId.BSC_TESTNET]: '0xaE6C14AAA753B3FCaB96149e1E10Bc4EDF39F546',
   [ChainId.ARBITRUM_ONE]: '',
@@ -101,6 +109,8 @@ export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.ETHEREUM]: [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
   [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
+  [ChainId.CRONOS]: [WNATIVE[ChainId.CRONOS], USDC[ChainId.CRONOS], cronosTokens.frtn],
+  [ChainId.CRONOS_TESTNET]: [],
   [ChainId.BSC]: [
     bscTokens.wbnb,
     bscTokens.cake,
