@@ -2,3 +2,7 @@ packages:
   - 'packages/*'
   - '!packages/pcsx-sdk'
   - '!packages/farms'
+  - 'apps/*'
+  - 'apis/*'
+  - 'examples/*'
+  - 'scripts'
