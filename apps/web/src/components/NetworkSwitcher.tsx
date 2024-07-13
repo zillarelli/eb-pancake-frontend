@@ -149,6 +149,7 @@ const SHORT_SYMBOL = {
   [ChainId.ETHEREUM]: 'ETH',
   [ChainId.CRONOS]: 'CRO',
   [ChainId.CRONOS_TESTNET]: 'tCRO',
+  [ChainId.CRONOS_ZKEVM_TESTNET]: 'zkTCRO',
   [ChainId.BSC]: 'BNB',
   [ChainId.BSC_TESTNET]: 'tBNB',
   [ChainId.GOERLI]: 'GOR',

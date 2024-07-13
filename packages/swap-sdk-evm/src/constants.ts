@@ -39,6 +39,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://ethereum.org',
   ),
+  [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
+    ChainId.CRONOS_ZKEVM_TESTNET,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://ethereum.org',
+  ),
   [ChainId.BSC]: new ERC20Token(
     ChainId.BSC,
     '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
@@ -253,6 +261,14 @@ export const WCRO = {
     'Wrapped CRO',
     'https://www.crypto.org',
   ),
+  [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
+    ChainId.CRONOS_ZKEVM_TESTNET,
+    '0xf9Bb37013de8Cd3f89b3623Af9EE1b1B32D872C9',
+    18,
+    'WCRO',
+    'Wrapped CRO',
+    'https://www.crypto.org',
+  ),
 }
 
 export const WNATIVE = {
@@ -260,6 +276,7 @@ export const WNATIVE = {
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
   [ChainId.CRONOS]: WCRO[ChainId.CRONOS],
   [ChainId.CRONOS_TESTNET]: WCRO[ChainId.CRONOS_TESTNET],
+  [ChainId.CRONOS_ZKEVM_TESTNET]: WCRO[ChainId.CRONOS_ZKEVM_TESTNET],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
   [ChainId.ARBITRUM_ONE]: WETH9[ChainId.ARBITRUM_ONE],
@@ -298,11 +315,8 @@ export const NATIVE = {
   [ChainId.ETHEREUM]: ETHER,
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   [ChainId.CRONOS]: CRO,
-  [ChainId.CRONOS_TESTNET]: {
-    name: 'Cronos Chain Native Token',
-    symbol: 'tBNB',
-    decimals: 18,
-  },
+  [ChainId.CRONOS_TESTNET]: CRO,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: CRO,
   [ChainId.BSC]: BNB,
   [ChainId.BSC_TESTNET]: {
     name: 'Binance Chain Native Token',

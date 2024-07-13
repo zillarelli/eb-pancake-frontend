@@ -27,6 +27,9 @@ const ARBITRUM_NODES = [
 ].filter(notEmpty)
 
 export const SERVER_NODES = {
+  [ChainId.CRONOS]: ['https://evm.cronos.org', 'https://rpc.ebisusbay.com'],
+  [ChainId.CRONOS_TESTNET]: ['https://evm-t3.cronos.org', 'https://rpc.ebisusbay.biz'],
+  [ChainId.CRONOS_ZKEVM_TESTNET]: ['https://testnet.zkevm.cronos.org'],
   [ChainId.BSC]: [
     getNodeRealUrl(ChainId.BSC, process.env.SERVER_NODE_REAL_API_ETH) || '',
     process.env.NEXT_PUBLIC_NODE_PRODUCTION || '',
@@ -87,6 +90,9 @@ export const SERVER_NODES = {
 } satisfies Record<ChainId, readonly string[]>
 
 export const PUBLIC_NODES: Record<ChainId, string[] | readonly string[]> = {
+  [ChainId.CRONOS]: ['https://evm.cronos.org', 'https://rpc.ebisusbay.com'],
+  [ChainId.CRONOS_TESTNET]: ['https://evm-t3.cronos.org', 'https://rpc.ebisusbay.biz'],
+  [ChainId.CRONOS_ZKEVM_TESTNET]: ['https://testnet.zkevm.cronos.org'],
   [ChainId.BSC]: [
     process.env.NEXT_PUBLIC_NODE_PRODUCTION || '',
     getNodeRealUrl(ChainId.BSC, process.env.NEXT_PUBLIC_NODE_REAL_API_ETH) || '',

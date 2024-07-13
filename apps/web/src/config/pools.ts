@@ -2,6 +2,9 @@ import { ChainId } from '@pancakeswap/chains'
 
 // Revalidate interval in milliseconds
 export const POOLS_FAST_REVALIDATE = {
+  [ChainId.CRONOS]: 10_000,
+  [ChainId.CRONOS_TESTNET]: 10_000,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: 10_000,
   [ChainId.BSC_TESTNET]: 10_000,
   [ChainId.BSC]: 10_000,
   [ChainId.ETHEREUM]: 20_000,
@@ -26,6 +29,9 @@ export const POOLS_FAST_REVALIDATE = {
 
 // Revalidate interval in milliseconds
 export const POOLS_NORMAL_REVALIDATE = {
+  [ChainId.CRONOS]: 15_000,
+  [ChainId.CRONOS_TESTNET]: 15_000,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: 15_000,
   [ChainId.BSC_TESTNET]: 15_000,
   [ChainId.BSC]: 15_000,
   [ChainId.ETHEREUM]: 20_000,
@@ -49,6 +55,9 @@ export const POOLS_NORMAL_REVALIDATE = {
 } as const satisfies Record<ChainId, number>
 
 export const POOLS_SLOW_REVALIDATE = {
+  [ChainId.CRONOS]: 20_000,
+  [ChainId.CRONOS_TESTNET]: 20_000,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: 20_000,
   [ChainId.BSC_TESTNET]: 20_000,
   [ChainId.BSC]: 20_000,
   [ChainId.ETHEREUM]: 40_000,

@@ -159,6 +159,13 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.CRONOS]: USDC_CRONOS,
   [ChainId.CRONOS_TESTNET]: USDC_TESTNET,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
+    ChainId.CRONOS_ZKEVM_TESTNET,
+    '0x6d591768aAf861c40b2BbAe69C685a24DbB0Bab7',
+    6,
+    'USDC',
+    'USD Coin',
+  ),
   [ChainId.BSC]: USDC_BSC,
   [ChainId.BSC_TESTNET]: USDC_TESTNET,
   [ChainId.GOERLI]: USDC_GOERLI,
@@ -422,6 +429,65 @@ export const CAKE = {
   ),
 }
 
+export const DAI = {
+  [ChainId.ARBITRUM_ONE]: new ERC20Token(
+    ChainId.ARBITRUM_ONE,
+    '0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://www.makerdao.com/',
+  ),
+  [ChainId.BASE]: new ERC20Token(
+    ChainId.BASE,
+    '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://www.makerdao.com/',
+  ),
+  [ChainId.BSC]: new ERC20Token(
+    ChainId.BSC,
+    '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://www.makerdao.com/',
+  ),
+  [ChainId.ETHEREUM]: new ERC20Token(
+    ChainId.ETHEREUM,
+    '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://www.makerdao.com/',
+  ),
+  [ChainId.POLYGON_ZKEVM]: new ERC20Token(
+    ChainId.POLYGON_ZKEVM,
+    '0xC5015b9d9161Dca7e18e32f6f25C4aD850731Fd4',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://makerdao.com/',
+  ),
+  [ChainId.ZKSYNC]: new ERC20Token(
+    ChainId.ZKSYNC,
+    '0x4B9eb6c0b6ea15176BBF62841C6B2A8a398cb656',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://makerdao.com/en/',
+  ),
+  [ChainId.LINEA]: new ERC20Token(
+    ChainId.LINEA,
+    '0x4AF15ec2A0BD43Db75dd04E62FAA3B8EF36b00d5',
+    18,
+    'DAI',
+    'Dai Stablecoin',
+    'https://www.makerdao.com/',
+  ),
+}
+
 export const WBTC_CRONOS = new ERC20Token(
   ChainId.CRONOS,
   '0x062E66477Faf219F25D27dCED647BF57C3107d52',
@@ -443,6 +509,7 @@ export const STABLE_COIN = {
   [ChainId.GOERLI]: USDC[ChainId.GOERLI],
   [ChainId.CRONOS]: USDT[ChainId.CRONOS],
   [ChainId.CRONOS_TESTNET]: USDC_TESTNET,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: USDC[ChainId.CRONOS_ZKEVM_TESTNET],
   [ChainId.BSC]: USDT[ChainId.BSC],
   [ChainId.BSC_TESTNET]: BUSD[ChainId.BSC_TESTNET],
   [ChainId.ARBITRUM_ONE]: USDC[ChainId.ARBITRUM_ONE],
