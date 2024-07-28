@@ -157,55 +157,6 @@ export const BUSD = {
   ),
 }
 
-export const USDT = {
-  [ChainId.BSC]: USDT_BSC,
-  [ChainId.ETHEREUM]: USDT_ETH,
-  [ChainId.CRONOS]: USDT_CRONOS,
-  [ChainId.ARBITRUM_ONE]: new ERC20Token(
-    ChainId.ARBITRUM_ONE,
-    '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
-    6,
-    'USDT',
-    'Tether USD',
-  ),
-  [ChainId.POLYGON_ZKEVM]: new ERC20Token(
-    ChainId.POLYGON_ZKEVM,
-    '0x1E4a5963aBFD975d8c9021ce480b42188849D41d',
-    6,
-    'USDT',
-    'Tether USD',
-  ),
-  [ChainId.POLYGON_ZKEVM_TESTNET]: new ERC20Token(
-    ChainId.POLYGON_ZKEVM_TESTNET,
-    '0x7379a261bC347BDD445484A91648Abf4A2BDEe5E',
-    6,
-    'USDT',
-    'Tether USD',
-  ),
-  [ChainId.ZKSYNC]: new ERC20Token(
-    ChainId.ZKSYNC,
-    '0x493257fD37EDB34451f62EDf8D2a0C418852bA4C',
-    6,
-    'USDT',
-    'Tether USD',
-  ),
-  [ChainId.OPBNB_TESTNET]: new ERC20Token(
-    ChainId.OPBNB_TESTNET,
-    '0xCF712f20c85421d00EAa1B6F6545AaEEb4492B75',
-    6,
-    'USDT',
-    'Tether USD',
-  ),
-  [ChainId.OPBNB]: new ERC20Token(
-    ChainId.OPBNB,
-    '0x9e5AAC1Ba1a2e6aEd6b32689DFcF62A509Ca96f3',
-    18,
-    'USDT',
-    'Tether USD',
-  ),
-  [ChainId.LINEA]: new ERC20Token(ChainId.LINEA, '0xA219439258ca9da29E9Cc4cE5596924745e12B93', 6, 'USDT', 'Tether USD'),
-}
-
 export const FRTN = {
   [ChainId.ETHEREUM]: USDT_ETH,
   [ChainId.CRONOS]: FRTN_MAINNET,
@@ -446,6 +397,7 @@ export const USDC = {
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
   [ChainId.ETHEREUM]: USDT_ETH,
+  [ChainId.CRONOS]: USDT_CRONOS,
   [ChainId.ARBITRUM_ONE]: new ERC20Token(
     ChainId.ARBITRUM_ONE,
     '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
