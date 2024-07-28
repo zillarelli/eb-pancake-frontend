@@ -1,5 +1,19 @@
 # @pancakeswap/tokens
 
+## 0.6.23
+
+### Patch Changes
+
+- @pancakeswap/sdk@5.8.8
+- @pancakeswap/token-lists@0.0.12
+
+## 0.6.22
+
+### Patch Changes
+
+- 4628ab7: Add Subsquid (SQD) token and SQD-ETH farm on Arbitrum
+- 8f573cf: list ZKE & RF
+
 ## 0.6.21
 
 ### Patch Changes

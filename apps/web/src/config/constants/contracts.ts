@@ -47,6 +47,7 @@ export default {
   pancakeProfileProxy: {
     [ChainId.ARBITRUM_ONE]: '0x5A3526891D6216DAe42d3e17a545A45f854F2213',
     [ChainId.ETHEREUM]: '0xeA08f9e4267e30721D755A46Bcaddbf993d8C59B',
+    [ChainId.ZKSYNC]: '0xb6700cC1ab23BeB00c88496EAAA344fba31Ff895',
   },
   pancakeBunnies: {
     [ChainId.BSC]: '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07',
@@ -150,7 +151,7 @@ export default {
     [ChainId.BSC]: '0x2C36221bF724c60E9FEE3dd44e2da8017a8EF3BA',
     [ChainId.BSC_TESTNET]: '0x',
   },
-  nonBscVault: {
+  crossFarmingVault: {
     [ChainId.ETHEREUM]: '0x2e71B2688019ebdFDdE5A45e6921aaebb15b25fb',
     [ChainId.GOERLI]: '0xE6c904424417D03451fADd6E3f5b6c26BcC43841',
   },
@@ -234,6 +235,7 @@ export default {
     [ChainId.BSC_TESTNET]: '0x4879fcB447E7F4c7843A6D15dF5526061304dcFb',
     [ChainId.ARBITRUM_ONE]: '0xF4C31dfEB3C0A2203472A3e20e49B1EFE4bD588d',
     [ChainId.ETHEREUM]: '0x0aC4ED1D63c51f2b35C555eE09b425f08E6eA556',
+    [ChainId.ZKSYNC]: '0x77AbEA6a2FAa1938723411B28A0863be34f3c89f',
   },
   pancakeVeSenderV2: {
     [ChainId.BSC]: '0xEF58528Ecb76b69a0F61F65d94797d531B34cf64',
@@ -251,5 +253,9 @@ export default {
   revenueSharingPoolGateway: {
     [ChainId.BSC]: '0x011f2a82846a4E9c62C2FC4Fd6fDbad19147D94A',
     [ChainId.BSC_TESTNET]: '0x946273012ED616410F698536F1BF2513417BF8Ec',
+  },
+  zkSyncAirDrop: {
+    [ChainId.ZKSYNC_TESTNET]: '0xbfcCF87Ee5cd03d4550Cc1526Bf152cc2EE1C7AB',
+    [ChainId.ZKSYNC]: '0xB774c13bA5a665713037c42A12f0ED9De70585cB',
   },
 } as const satisfies Record<string, Record<number, `0x${string}`>>

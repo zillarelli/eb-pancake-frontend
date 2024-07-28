@@ -8,10 +8,10 @@
   "peerDependencies": {
     "@pancakeswap/localization": "workspace:*",
     "dayjs": "^1.11.10",
+    "jotai": "^2.4.3",
     "lodash": "^4.17.21",
     "styled-components": "^6.0.7",
-    "viem": "2.13.3",
-    "jotai": "^2.4.3"
+    "viem": "catalog:"
   },
   "devDependencies": {
     "@pancakeswap/sdk": "workspace:*",
@@ -19,7 +19,7 @@
     "@types/lodash": "^4.14.168",
     "bignumber.js": "^9.0.0",
     "styled-components": "6.0.7",
-    "viem": "2.13.3"
+    "viem": "catalog:"
   },
   "peerDependenciesMeta": {
     "@pancakeswap/localization": {

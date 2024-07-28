@@ -38,7 +38,7 @@ import { useAccount } from 'wagmi'
 import { useMultichainVeCakeWellSynced } from './hooks/useMultichainVeCakeWellSynced'
 import { useProfileProxyWellSynced } from './hooks/useProfileProxyWellSynced'
 
-import { ArbitrumIcon, BinanceIcon, EthereumIcon } from './ChainLogos'
+import { ArbitrumIcon, BinanceIcon, EthereumIcon, ZKsyncIcon } from './ChainLogos'
 import { NetWorkUpdateToDateDisplay } from './components/NetworkUpdateToDate'
 import { CROSS_CHIAN_CONFIG } from './constants'
 import { useCrossChianMessage } from './hooks/useCrossChainMessage'
@@ -52,6 +52,7 @@ const ChainLogoMap = {
   [ChainId.BSC]: <BinanceIcon />,
   [ChainId.ETHEREUM]: <EthereumIcon width={16} />,
   [ChainId.ARBITRUM_ONE]: <ArbitrumIcon width={20} height={20} />,
+  [ChainId.ZKSYNC]: <ZKsyncIcon width={16} />,
 }
 
 const StyleUl = styled.ul`
@@ -157,7 +158,10 @@ export const CrossChainVeCakeModal: React.FC<{
       if (!account || !veCakeSenderV2Contract || !chainId || !isInitialized) return
       setModalState('ready')
       let syncFee = BigInt(
-        new BigNumber(CROSS_CHIAN_CONFIG[chainId].layerZeroFee.toString()).times(1.1).toNumber().toFixed(0),
+        new BigNumber(CROSS_CHIAN_CONFIG[chainId].layerZeroFee.toString())
+          .times(CROSS_CHIAN_CONFIG[chainId].layerZeroDeeBufferTimes ?? 1.1)
+          .toNumber()
+          .toFixed(0),
       )
 
       try {
@@ -166,7 +170,12 @@ export const CrossChainVeCakeModal: React.FC<{
           { account },
         )
         if (feeData.nativeFee !== 0n) {
-          syncFee = BigInt(new BigNumber(feeData.nativeFee.toString()).times(1.1).toNumber().toFixed(0))
+          syncFee = BigInt(
+            new BigNumber(feeData.nativeFee.toString())
+              .times(CROSS_CHIAN_CONFIG[chainId].layerZeroDeeBufferTimes ?? 1.1)
+              .toNumber()
+              .toFixed(0),
+          )
         }
       } catch (e) {
         console.error({ e }, 'feeData error and use the cached value')
@@ -258,6 +267,15 @@ export const CrossChainVeCakeModal: React.FC<{
                   veCakeOnBsc={veCakeOnBsc}
                   hash={txByChain[ChainId.ETHEREUM]}
                 />
+                <OtherChainsCard
+                  chainName="ZKsync"
+                  chainId={ChainId.ZKSYNC}
+                  onSelected={setSelectChainId}
+                  Icon={<ZKsyncIcon width={16} />}
+                  isSelected={selectChainId === ChainId.ZKSYNC}
+                  veCakeOnBsc={veCakeOnBsc}
+                  hash={txByChain[ChainId.ZKSYNC]}
+                />
               </Flex>
               <InfoBox />
 
@@ -318,7 +336,6 @@ const InfoBox = () => {
 }
 
 const BinanceChainCard = () => {
-  const { t } = useTranslation()
   const { balance } = useVeCakeBalance(ChainId.BSC)
   return (
     <VeCakeChainBox>
@@ -346,7 +363,7 @@ const OtherChainsCard: React.FC<{
   const { balance } = useVeCakeBalance(chainId)
   const { t } = useTranslation()
   const { isSynced, isLoading } = useProfileProxyWellSynced(chainId)
-  const { isVeCakeWillSync, isLoading: isVeCakeSyncLoading } = useMultichainVeCakeWellSynced(chainId)
+  const { isVeCakeWillSync } = useMultichainVeCakeWellSynced(chainId)
   const { data: crossChainMessage, isLoading: isCrossChainLoading } = useCrossChianMessage(chainId, hash)
   const { address: account } = useAccount()
   const isLayerZeroHashProcessing = useMemo(() => {

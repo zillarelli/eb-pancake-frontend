@@ -1,5 +1,26 @@
 # @pancakeswap/pools
 
+## 5.1.30
+
+### Patch Changes
+
+- @pancakeswap/token-lists@0.0.12
+- @pancakeswap/tokens@0.6.23
+
+## 5.1.29
+
+### Patch Changes
+
+- bf07bfa: List aitech syrup pool
+
+## 5.1.28
+
+### Patch Changes
+
+- Updated dependencies [4628ab7]
+- Updated dependencies [8f573cf]
+  - @pancakeswap/tokens@0.6.22
+
 ## 5.1.27
 
 ### Patch Changes

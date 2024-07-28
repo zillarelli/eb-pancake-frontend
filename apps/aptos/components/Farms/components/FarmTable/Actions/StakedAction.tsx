@@ -1,4 +1,4 @@
-import { useAccountBalance } from '@pancakeswap/awgmi'
+import { useBalance } from '@pancakeswap/awgmi'
 import { TransactionResponse } from '@pancakeswap/awgmi/core'
 import type { DeserializedFarmUserData } from '@pancakeswap/farms'
 import { FarmWithStakedValue } from '@pancakeswap/farms'
@@ -17,6 +17,7 @@ import useCatchTxError from 'hooks/useCatchTxError'
 import { usePriceCakeUsdc } from 'hooks/useStablePrice'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
+import { logGTMClickStakeFarmEvent, logGTMClickUnStakeFarmEvent } from 'utils/customGTMEventTracking'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import useStakeFarms from '../../../hooks/useStakeFarms'
 import useUnstakeFarms from '../../../hooks/useUnstakeFarms'
@@ -44,7 +45,7 @@ export function useStakedActions(tokenType) {
 export const StakedContainer = ({ children, ...props }) => {
   const { onStake, onUnstake } = useStakedActions(props.lpAddress)
   const { account } = useActiveWeb3React()
-  const { data: tokenBalance = BIG_ZERO } = useAccountBalance({
+  const { data: tokenBalance = BIG_ZERO } = useBalance({
     watch: true,
     address: account,
     coin: props.lpAddress,
@@ -120,6 +121,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
         </ToastDescriptionWithTx>,
       )
     }
+    logGTMClickStakeFarmEvent()
   }
 
   const handleUnstake = async (amount: string) => {
@@ -132,6 +134,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
         </ToastDescriptionWithTx>,
       )
     }
+    logGTMClickUnStakeFarmEvent()
   }
 
   const combineApr = useMemo(() => {

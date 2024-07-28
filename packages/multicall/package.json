@@ -1,6 +1,6 @@
 {
   "name": "@pancakeswap/multicall",
-  "version": "3.5.7",
+  "version": "3.5.8",
   "sideEffects": false,
   "scripts": {
     "build": "tsup",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@pancakeswap/chains": "workspace:*",
     "@pancakeswap/sdk": "workspace:*",
-    "viem": "2.13.3"
+    "viem": "catalog:"
   },
   "devDependencies": {
     "@pancakeswap/tsconfig": "workspace:*",

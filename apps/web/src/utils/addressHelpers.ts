@@ -4,6 +4,7 @@ import {
   bCakeFarmBoosterV3VeCakeAddress,
   bCakeFarmWrapperBoosterVeCakeAddress,
 } from '@pancakeswap/farms/constants/v3'
+
 import addresses from 'config/constants/contracts'
 import { VaultKey } from 'state/types'
 import { Address } from 'viem'
@@ -78,8 +79,8 @@ export const getCakeFlexibleSideVaultAddress = (chainId?: number) => {
   return getAddressFromMap(addresses.cakeFlexibleSideVault, chainId)
 }
 
-export const getFarmAuctionAddress = () => {
-  return getAddressFromMap(addresses.farmAuction)
+export const getFarmAuctionAddress = (chainId?: number) => {
+  return getAddressFromMap(addresses.farmAuction, chainId)
 }
 
 export const getNftMarketAddress = () => {
@@ -119,8 +120,12 @@ export const getBCakeFarmBoosterProxyFactoryAddress = () => {
   return getAddressFromMap(addresses.bCakeFarmBoosterProxyFactory)
 }
 
-export const getNonBscVaultAddress = (chainId?: number) => {
-  return getAddressFromMap(addresses.nonBscVault, chainId)
+export const getZkSyncAirDropAddress = (chainId?: number) => {
+  return getAddressFromMap(addresses.zkSyncAirDrop, chainId)
+}
+
+export const getCrossFarmingVaultAddress = (chainId?: number) => {
+  return getAddressFromMap(addresses.crossFarmingVault, chainId)
 }
 
 export const getCrossFarmingSenderAddress = (chainId?: number) => {

@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js'
 import { BOOSTED_FARM_GAS_LIMIT, DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from 'config'
-import { getMasterChefContract, getNonBscVaultContract, getV2SSBCakeWrapperContract } from 'utils/contractHelpers'
-import { logGTMClickStakeFarmEvent } from 'utils/customGTMEventTracking'
-import { MessageTypes, getNonBscVaultContractFee } from 'views/Farms/hooks/getNonBscVaultFee'
+import { getCrossFarmingVaultContract, getMasterChefContract, getV2SSBCakeWrapperContract } from 'utils/contractHelpers'
+import { logGTMClickStakeFarmEvent, logGTMClickUnStakeFarmEvent } from 'utils/customGTMEventTracking'
+import { MessageTypes, getCrossFarmingVaultContractFee } from 'views/Farms/hooks/getCrossFarmingVaultFee'
 
 export type MasterChefContractType = ReturnType<typeof getMasterChefContract>
 type V2SSBCakeContractType = ReturnType<typeof getV2SSBCakeWrapperContract>
@@ -52,9 +52,8 @@ export const unstakeFarm = async (
   gasLimit?: bigint,
 ) => {
   const value = new BigNumber(amount).times(DEFAULT_TOKEN_DECIMAL).toString()
-
   if (!masterChefContract?.account) return undefined
-
+  logGTMClickUnStakeFarmEvent()
   return masterChefContract.write.withdraw([pid, BigInt(value)], {
     gas: gasLimit || DEFAULT_GAS_LIMIT,
     gasPrice,
@@ -65,6 +64,7 @@ export const unstakeFarm = async (
 
 export const bCakeUnStakeFarm = async (v2SSContract: V2SSBCakeContractType, amount, gasPrice, gasLimit?: bigint) => {
   const value = new BigNumber(amount).times(DEFAULT_TOKEN_DECIMAL).toString()
+  logGTMClickUnStakeFarmEvent()
   return v2SSContract.write.withdraw([BigInt(value), false], {
     gas: gasLimit || DEFAULT_GAS_LIMIT,
     gasPrice,
@@ -93,8 +93,8 @@ export const bCakeHarvestFarm = async (v2SSContract: V2SSBCakeContractType, gasP
   })
 }
 
-export const nonBscStakeFarm = async (
-  contract: ReturnType<typeof getNonBscVaultContract>,
+export const crossChainStakeFarm = async (
+  contract: ReturnType<typeof getCrossFarmingVaultContract>,
   pid,
   amount,
   gasPrice,
@@ -105,7 +105,7 @@ export const nonBscStakeFarm = async (
   if (!contract.account) return undefined
 
   const value = new BigNumber(amount).times(DEFAULT_TOKEN_DECIMAL).toString()
-  const totalFee = await getNonBscVaultContractFee({
+  const totalFee = await getCrossFarmingVaultContractFee({
     pid,
     chainId,
     gasPrice,
@@ -123,8 +123,8 @@ export const nonBscStakeFarm = async (
   })
 }
 
-export const nonBscUnstakeFarm = async (
-  contract: ReturnType<typeof getNonBscVaultContract>,
+export const crossChainUnstakeFarm = async (
+  contract: ReturnType<typeof getCrossFarmingVaultContract>,
   pid,
   amount,
   gasPrice,
@@ -135,7 +135,7 @@ export const nonBscUnstakeFarm = async (
   if (!contract.account) return undefined
 
   const value = new BigNumber(amount).times(DEFAULT_TOKEN_DECIMAL).toString()
-  const totalFee = await getNonBscVaultContractFee({
+  const totalFee = await getCrossFarmingVaultContractFee({
     pid,
     chainId,
     gasPrice,
@@ -145,6 +145,7 @@ export const nonBscUnstakeFarm = async (
     messageType: MessageTypes.Withdraw,
   })
   console.info(totalFee, 'unstake totalFee')
+  logGTMClickUnStakeFarmEvent()
   return contract.write.withdraw([pid, BigInt(value)], {
     value: BigInt(totalFee),
     account: contract.account ?? '0x',
