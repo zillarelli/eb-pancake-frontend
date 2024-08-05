@@ -300,7 +300,7 @@ export const WNATIVE = {
 const ETHER = { name: 'Ether', symbol: 'ETH', decimals: 18 } as const
 
 const CRO = {
-  name: 'Cronos Chain Native Token',
+  name: 'Cronos',
   symbol: 'CRO',
   decimals: 18,
 } as const
