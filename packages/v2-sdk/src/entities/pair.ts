@@ -46,6 +46,19 @@ function getCreate2Address(
     size: 32,
   }) as ByteArray
 
+  console.log('getCreate2Address', {
+    from_,
+    salt_,
+    initCodeHash,
+    from,
+    salt,
+    initCodeHashBytes: toBytes(initCodeHash),
+    concat: concat([toBytes('0xff'), from, salt, toBytes(initCodeHash)]),
+    keccak256: keccak256(concat([toBytes('0xff'), from, salt, toBytes(initCodeHash)])),
+    sliced: slice(keccak256(concat([toBytes('0xff'), from, salt, toBytes(initCodeHash)])), 12),
+    getAddress: getAddress(slice(keccak256(concat([toBytes('0xff'), from, salt, toBytes(initCodeHash)])), 12)),
+  });
+  
   return getAddress(slice(keccak256(concat([toBytes('0xff'), from, salt, toBytes(initCodeHash)])), 12))
 }
 
@@ -53,6 +66,19 @@ const EMPTY_INPU_HASH = '0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad
 const ZKSYNC_PREFIX = '0x2020dba91b30cc0006188af794c2fb30dd8520db7e2c088b7fc7c103c00ca494' // keccak256('zksyncCreate2')
 
 function getCreate2AddressZkSync(from: Address, salt: `0x${string}`, initCodeHash: `0x${string}`): `0x${string}` {
+  console.log('getCreate2AddressZkSync', {
+    from,
+    salt,
+    initCodeHash,
+    EMPTY_INPU_HASH,
+    ZKSYNC_PREFIX,
+    pad: pad(from, { size: 32 }),
+    concat: [ZKSYNC_PREFIX, pad(from, { size: 32 }), salt, initCodeHash, EMPTY_INPU_HASH],
+    keccak256: keccak256(concat([ZKSYNC_PREFIX, pad(from, { size: 32 }), salt, initCodeHash, EMPTY_INPU_HASH])),
+    sliced: keccak256(concat([ZKSYNC_PREFIX, pad(from, { size: 32 }), salt, initCodeHash, EMPTY_INPU_HASH])).slice(26),
+    param: `0x${keccak256(concat([ZKSYNC_PREFIX, pad(from, { size: 32 }), salt, initCodeHash, EMPTY_INPU_HASH])).slice(26)}`,
+    output: getAddress(`0x${keccak256(concat([ZKSYNC_PREFIX, pad(from, { size: 32 }), salt, initCodeHash, EMPTY_INPU_HASH])).slice(26)}`)
+  });
   return getAddress(
     `0x${keccak256(concat([ZKSYNC_PREFIX, pad(from, { size: 32 }), salt, initCodeHash, EMPTY_INPU_HASH])).slice(26)}`,
   )
@@ -72,6 +98,22 @@ export const computePairAddress = ({
 
   const zkChains = [ChainId.ZKSYNC, ChainId.ZKSYNC_TESTNET]
   if (PAIR_ADDRESS_CACHE?.[key] === undefined) {
+
+    console.log('=====DEBUGGING PAIRS START=====');
+    console.log('INFO', factoryAddress, key);
+    console.log('TOKENS', tokenA, tokenB)
+    getCreate2Address(
+      factoryAddress,
+      keccak256(encodePacked(['address', 'address'], [token0.address, token1.address])),
+      INIT_CODE_HASH_MAP[token0.chainId as keyof typeof INIT_CODE_HASH_MAP]
+    )
+    getCreate2AddressZkSync(
+      factoryAddress,
+      keccak256(encodePacked(['address', 'address'], [token0.address, token1.address])),
+      INIT_CODE_HASH_MAP[token0.chainId as keyof typeof INIT_CODE_HASH_MAP],
+    )
+    console.log('=====DEBUGGING PAIRS END=====');
+
     const getCreate2Address_ =
       zkChains.includes(token0.chainId) || zkChains.includes(token1.chainId)
         ? getCreate2AddressZkSync
