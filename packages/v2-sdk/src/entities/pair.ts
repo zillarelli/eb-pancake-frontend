@@ -101,7 +101,8 @@ export const computePairAddress = ({
 
     console.log('=====DEBUGGING PAIRS START=====');
     console.log('INFO', factoryAddress, key);
-    console.log('TOKENS', tokenA, tokenB)
+    console.log('TOKENS', token0, token1)
+    console.log('CHECK PATH', zkChains.includes(token0.chainId) || zkChains.includes(token1.chainId));
     getCreate2Address(
       factoryAddress,
       keccak256(encodePacked(['address', 'address'], [token0.address, token1.address])),
