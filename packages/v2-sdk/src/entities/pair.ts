@@ -96,7 +96,7 @@ export const computePairAddress = ({
   const [token0, token1] = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
   const key = composeKey(token0, token1)
 
-  const zkChains = [ChainId.ZKSYNC, ChainId.ZKSYNC_TESTNET]
+  const zkChains = [ChainId.ZKSYNC, ChainId.ZKSYNC_TESTNET, ChainId.CRONOS_ZKEVM_TESTNET]
   if (PAIR_ADDRESS_CACHE?.[key] === undefined) {
 
     console.log('=====DEBUGGING PAIRS START=====');
