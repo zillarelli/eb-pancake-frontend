@@ -15,6 +15,7 @@ export const BLOCK_CONFLICT_TOLERANCE: { [key in ChainId]?: number } = {
 
   // Testnets
   [ChainId.CRONOS_TESTNET]: 3,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: 3,
   [ChainId.BSC_TESTNET]: 3,
   [ChainId.GOERLI]: 1,
   [ChainId.ARBITRUM_GOERLI]: 5,
