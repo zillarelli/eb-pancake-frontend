@@ -161,6 +161,14 @@ export const FRTN = {
   [ChainId.ETHEREUM]: USDT_ETH,
   [ChainId.CRONOS]: FRTN_MAINNET,
   [ChainId.CRONOS_TESTNET]: FRTN_TESTNET,
+  [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
+    ChainId.CRONOS_ZKEVM_TESTNET,
+    '0x6f3ff3c76b6dd1d2b4cfc3846f6f1bcba757bf24',
+    18,
+    'FRTN',
+    'Fortune',
+    'https://ebisusbay.com/',
+  ),
 }
 
 export const CAKE = {

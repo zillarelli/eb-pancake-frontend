@@ -1,10 +1,11 @@
 import { ChainId } from '@pancakeswap/chains'
 import { ERC20Token, WCRO } from '@pancakeswap/sdk'
-import { USDC } from './common'
+import { FRTN, USDC } from './common'
 
 export const cronosZkEvmTestnetTokens = {
   wcro: WCRO[ChainId.CRONOS_ZKEVM_TESTNET],
   usdc: USDC[ChainId.CRONOS_ZKEVM_TESTNET],
+  frtn: FRTN[ChainId.CRONOS_ZKEVM_TESTNET],
   red: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
     '0xFD74cAbD5B009d24Aaed6293De322a2f5eF7892d',

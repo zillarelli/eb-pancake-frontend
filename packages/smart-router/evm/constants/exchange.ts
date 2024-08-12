@@ -115,7 +115,11 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.CRONOS]: [WNATIVE[ChainId.CRONOS], USDC[ChainId.CRONOS], cronosTokens.frtn],
   [ChainId.CRONOS_TESTNET]: [cronosTestnetTokens.wcro, cronosTestnetTokens.usdc],
-  [ChainId.CRONOS_ZKEVM_TESTNET]: [cronosZkEvmTestnetTokens.wcro, cronosZkEvmTestnetTokens.usdc],
+  [ChainId.CRONOS_ZKEVM_TESTNET]: [
+    cronosZkEvmTestnetTokens.wcro, 
+    cronosZkEvmTestnetTokens.usdc,
+    cronosZkEvmTestnetTokens.frtn
+  ],
   [ChainId.BSC]: [
     bscTokens.wbnb,
     bscTokens.cake,
