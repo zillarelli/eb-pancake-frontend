@@ -17,6 +17,17 @@ const DEFAULT: BatchMulticallConfigs = {
 export const BATCH_MULTICALL_CONFIGS: ChainMap<BatchMulticallConfigs> = {
   [ChainId.CRONOS]: DEFAULT,
   [ChainId.CRONOS_TESTNET]: DEFAULT,
+  [ChainId.CRONOS_ZKEVM]: {
+    defaultConfig: {
+      gasLimitPerCall: 500_000,
+    },
+    gasErrorFailureOverride: {
+      gasLimitPerCall: 1_500_000,
+    },
+    successRateFailureOverrides: {
+      gasLimitPerCall: 1_500_000,
+    },
+  },
   [ChainId.CRONOS_ZKEVM_TESTNET]: {
     defaultConfig: {
       gasLimitPerCall: 500_000,

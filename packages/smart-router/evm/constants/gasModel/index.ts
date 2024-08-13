@@ -30,6 +30,7 @@ export const usdGasTokensByChain = {
   [ChainId.GOERLI]: [goerliTestnetTokens.usdc],
   [ChainId.CRONOS]: [cronosTokens.usdc],
   [ChainId.CRONOS_TESTNET]: [cronosTestnetTokens.usdc],
+  [ChainId.CRONOS_ZKEVM]: [cronosZkEvmTestnetTokens.usdc],
   [ChainId.CRONOS_ZKEVM_TESTNET]: [cronosZkEvmTestnetTokens.usdc],
   [ChainId.BSC]: [bscTokens.usdt],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.usdt],

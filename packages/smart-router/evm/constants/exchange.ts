@@ -26,6 +26,7 @@ import {
   sepoliaTokens,
   zkSyncTestnetTokens,
   zksyncTokens,
+  cronosZkEvmTokens,
   cronosZkEvmTestnetTokens,
 } from '@pancakeswap/tokens'
 
@@ -36,6 +37,7 @@ export const SMART_ROUTER_ADDRESSES = {
   [ChainId.GOERLI]: '0x9a489505a00cE272eAa5e07Dba6491314CaE3796',
   [ChainId.CRONOS]: '',
   [ChainId.CRONOS_TESTNET]: '',
+  [ChainId.CRONOS_ZKEVM]: '',
   [ChainId.CRONOS_ZKEVM_TESTNET]: '',
   [ChainId.BSC]: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
   [ChainId.BSC_TESTNET]: '0x9a489505a00cE272eAa5e07Dba6491314CaE3796',
@@ -62,6 +64,7 @@ export const V2_ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.GOERLI]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
   [ChainId.CRONOS]: '0xa476c97D8d1ec7D263EAfa0039645DBe0cc0a012',
   [ChainId.CRONOS_TESTNET]: '0xDca6EA0c674B1369994Dec7b18FC5b38E0d43ed8',
+  [ChainId.CRONOS_ZKEVM]: '0x519288687016Dd5199F454123F44D5016fF7Dd5a',
   [ChainId.CRONOS_ZKEVM_TESTNET]: '0x542F3d6aA5609a97bbFB56a4C430b3F37e5fA12F',
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
@@ -88,6 +91,7 @@ export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
   [ChainId.GOERLI]: '',
   [ChainId.CRONOS]: '',
   [ChainId.CRONOS_TESTNET]: '',
+  [ChainId.CRONOS_ZKEVM]: '',
   [ChainId.CRONOS_ZKEVM_TESTNET]: '',
   [ChainId.BSC]: '0xa680d27f63Fa5E213C502d1B3Ca1EB6a3C1b31D6',
   [ChainId.BSC_TESTNET]: '0xaE6C14AAA753B3FCaB96149e1E10Bc4EDF39F546',
@@ -115,6 +119,11 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.CRONOS]: [WNATIVE[ChainId.CRONOS], USDC[ChainId.CRONOS], cronosTokens.frtn],
   [ChainId.CRONOS_TESTNET]: [cronosTestnetTokens.wcro, cronosTestnetTokens.usdc],
+  [ChainId.CRONOS_ZKEVM]: [
+    cronosZkEvmTokens.wcro, 
+    cronosZkEvmTokens.usdc,
+    cronosZkEvmTokens.frtn
+  ],
   [ChainId.CRONOS_ZKEVM_TESTNET]: [
     cronosZkEvmTestnetTokens.wcro, 
     cronosZkEvmTestnetTokens.usdc,

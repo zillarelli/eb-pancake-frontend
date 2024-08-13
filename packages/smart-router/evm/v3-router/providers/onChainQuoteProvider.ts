@@ -27,6 +27,7 @@ const DEFAULT_BATCH_RETRIES = 2
 const SUCCESS_RATE_CONFIG = {
   [ChainId.CRONOS]: 0.1,
   [ChainId.CRONOS_TESTNET]: 0.1,
+  [ChainId.CRONOS_ZKEVM]: 0.1,
   [ChainId.CRONOS_ZKEVM_TESTNET]: 0.1,
   [ChainId.BSC_TESTNET]: 0.1,
   [ChainId.BSC]: 0.1,

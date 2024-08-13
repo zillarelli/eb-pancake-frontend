@@ -161,6 +161,14 @@ export const FRTN = {
   [ChainId.ETHEREUM]: USDT_ETH,
   [ChainId.CRONOS]: FRTN_MAINNET,
   [ChainId.CRONOS_TESTNET]: FRTN_TESTNET,
+  [ChainId.CRONOS_ZKEVM]: new ERC20Token(
+    ChainId.CRONOS_ZKEVM,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'FRTN',
+    'Fortune',
+    'https://ebisusbay.com/',
+  ),
   [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
     '0x6f3ff3c76b6dd1d2b4cfc3846f6f1bcba757bf24',
@@ -294,6 +302,13 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.CRONOS]: USDC_CRONOS,
   [ChainId.CRONOS_TESTNET]: USDC_TESTNET,
+  [ChainId.CRONOS_ZKEVM]: new ERC20Token(
+    ChainId.CRONOS_ZKEVM,
+    '0x5b91e29Ae5A71d9052620Acb813d5aC25eC7a4A2',
+    6,
+    'USDC',
+    'USD Coin',
+  ),
   [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
     '0x8C424562336c1cCAB26638b8aFe7b7F633C6deDa',
@@ -553,6 +568,7 @@ export const STABLE_COIN = {
   [ChainId.GOERLI]: USDC[ChainId.GOERLI],
   [ChainId.CRONOS]: USDT[ChainId.CRONOS],
   [ChainId.CRONOS_TESTNET]: USDC_TESTNET,
+  [ChainId.CRONOS_ZKEVM]: USDC[ChainId.CRONOS_ZKEVM],
   [ChainId.CRONOS_ZKEVM_TESTNET]: USDC[ChainId.CRONOS_ZKEVM_TESTNET],
   [ChainId.BSC]: USDT[ChainId.BSC],
   [ChainId.BSC_TESTNET]: BUSD[ChainId.BSC_TESTNET],

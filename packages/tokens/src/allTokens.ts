@@ -23,11 +23,13 @@ import { zkSyncTestnetTokens } from './constants/zkSyncTestnet'
 import { cronosTokens } from './constants/cronos'
 import { cronosTestnetTokens } from './constants/cronosTestnet'
 import { cronosZkEvmTestnetTokens } from './constants/cronosZkEVMTestnet'
+import { cronosZkEvmTokens } from './constants/cronosZkEVM'
 
 export const allTokens = {
   [ChainId.GOERLI]: goerliTestnetTokens,
   [ChainId.CRONOS]: cronosTokens,
   [ChainId.CRONOS_TESTNET]: cronosTestnetTokens,
+  [ChainId.CRONOS_ZKEVM]: cronosZkEvmTokens,
   [ChainId.CRONOS_ZKEVM_TESTNET]: cronosZkEvmTestnetTokens,
   [ChainId.BSC]: bscTokens,
   [ChainId.BSC_TESTNET]: bscTestnetTokens,
