@@ -43,8 +43,8 @@ export const WETH9 = {
     ChainId.CRONOS_ZKEVM,
     '0x898B3560AFFd6D955b1574D87EE09e46669c60eA',
     18,
-    'WETH',
-    'Wrapped Ether',
+    'vETH',
+    'Veno ETH',
     'https://ethereum.org',
   ),
   [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(

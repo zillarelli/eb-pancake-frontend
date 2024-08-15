@@ -163,7 +163,7 @@ export const FRTN = {
   [ChainId.CRONOS_TESTNET]: FRTN_TESTNET,
   [ChainId.CRONOS_ZKEVM]: new ERC20Token(
     ChainId.CRONOS_ZKEVM,
-    '0x0000000000000000000000000000000000000000',
+    '0x96e03fa6c5ab3a7f2e7098dd07c8935493294e26',
     18,
     'FRTN',
     'Fortune',
@@ -307,7 +307,7 @@ export const USDC = {
     '0x5b91e29Ae5A71d9052620Acb813d5aC25eC7a4A2',
     6,
     'vUSD',
-    'USD Coin',
+    'Veno USD',
   ),
   [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
