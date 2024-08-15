@@ -70,7 +70,7 @@ export const computePairAddress = ({
   const [token0, token1] = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
   const key = composeKey(token0, token1)
 
-  const zkChains = [ChainId.ZKSYNC, ChainId.ZKSYNC_TESTNET, ChainId.CRONOS_ZKEVM_TESTNET]
+  const zkChains = [ChainId.ZKSYNC, ChainId.ZKSYNC_TESTNET, ChainId.CRONOS_ZKEVM_TESTNET, ChainId.CRONOS_ZKEVM]
   if (PAIR_ADDRESS_CACHE?.[key] === undefined) {
     const getCreate2Address_ =
       zkChains.includes(token0.chainId) || zkChains.includes(token1.chainId)
