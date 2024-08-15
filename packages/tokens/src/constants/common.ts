@@ -163,7 +163,7 @@ export const FRTN = {
   [ChainId.CRONOS_TESTNET]: FRTN_TESTNET,
   [ChainId.CRONOS_ZKEVM]: new ERC20Token(
     ChainId.CRONOS_ZKEVM,
-    '0x96e03fa6c5ab3a7f2e7098dd07c8935493294e26',
+    '0x96e03FA6c5aB3a7F2e7098Dd07c8935493294E26',
     18,
     'FRTN',
     'Fortune',
@@ -171,7 +171,7 @@ export const FRTN = {
   ),
   [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
-    '0x6f3ff3c76b6dd1d2b4cfc3846f6f1bcba757bf24',
+    '0x6F3ff3c76B6dd1D2b4CfC3846f6f1BCBa757bf24',
     18,
     'FRTN',
     'Fortune',
