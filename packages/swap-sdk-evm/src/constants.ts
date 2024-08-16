@@ -325,7 +325,11 @@ export const NATIVE = {
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   [ChainId.CRONOS]: CRO,
   [ChainId.CRONOS_TESTNET]: CRO,
-  [ChainId.CRONOS_ZKEVM]: CRO,
+  [ChainId.CRONOS_ZKEVM]: {
+    name: 'Cronos zkEVM CRO',
+    symbol: 'zkCRO',
+    decimals: 18,
+  },
   [ChainId.CRONOS_ZKEVM_TESTNET]: CRO,
   [ChainId.BSC]: BNB,
   [ChainId.BSC_TESTNET]: {

@@ -8,7 +8,7 @@ export const cronosZkEvmTokens = {
   frtn: FRTN[ChainId.CRONOS_ZKEVM],
   weth: new ERC20Token(
     ChainId.CRONOS_ZKEVM,
-    '0x898B3560AFFd6D955b1574D87EE09e46669c60eA',
+    '0x271602A97027ee1dd03b1E6e5dB153eB659A80b1',
     18,
     'vETH',
     'Veno ETH',
