@@ -121,9 +121,9 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.CRONOS_TESTNET]: [cronosTestnetTokens.wcro, cronosTestnetTokens.usdc],
   [ChainId.CRONOS_ZKEVM]: [
     cronosZkEvmTokens.wcro, 
-    cronosZkEvmTokens.usdc,
     cronosZkEvmTokens.frtn,
-    cronosZkEvmTokens.weth
+    cronosZkEvmTokens.vusd,
+    cronosZkEvmTokens.veth
   ],
   [ChainId.CRONOS_ZKEVM_TESTNET]: [
     cronosZkEvmTestnetTokens.wcro, 
