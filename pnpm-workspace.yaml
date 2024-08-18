@@ -1,7 +1,6 @@
 packages:
   - 'packages/*'
-  - 'packages/pcsx-sdk'
-  - 'packages/farms'
+  - 'packages/routing-sdk/**'
   - 'apps/*'
   - 'apis/*'
   - 'examples/*'
@@ -10,4 +9,3 @@ packages:
 catalog:
   viem: ^2.17.3
   wagmi: ^2.10.10
-
