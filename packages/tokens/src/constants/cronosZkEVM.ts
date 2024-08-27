@@ -8,7 +8,7 @@ export const cronosZkEvmTokens = {
   vusd: new ERC20Token(
     ChainId.CRONOS_ZKEVM,
     '0x5b91e29Ae5A71d9052620Acb813d5aC25eC7a4A2',
-    6,
+    18,
     'vUSD',
     'Veno USD',
   ),
