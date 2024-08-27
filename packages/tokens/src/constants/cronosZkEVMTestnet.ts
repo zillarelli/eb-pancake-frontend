@@ -14,7 +14,7 @@ export const cronosZkEvmTestnetTokens = {
   ),
   veth: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
-    '0x8eb8f79CaB3A1c02F9A0Fc33A8E792625D6a240',
+    '0x8eb8f79CaB3A1c02F9A0Fc33A8E792625D6a2405',
     18,
     'vETH',
     'Veno ETH',
