@@ -3269,4 +3269,20 @@ export const bscTokens = {
     'Wrapped liquid staked Ether 2.0',
     'https://lido.fi/',
   ),
+  kbtc: new ERC20Token(
+    ChainId.BSC,
+    '0x9356f6d95b8E109F4b7Ce3E49D672967d3B48383',
+    18,
+    'kBTC',
+    'Kinza Babylon Staked BTC',
+    'https://kinza.finance/',
+  ),
+  wxusdt: new ERC20Token(
+    ChainId.BSC,
+    '0x524bC91Dc82d6b90EF29F76A3ECAaBAffFD490Bc',
+    6,
+    'kBTC',
+    'Wormhole Wrapped USDT',
+    'https://wormhole.com/',
+  ),
 }

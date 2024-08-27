@@ -29,6 +29,7 @@ import { V4CakeIcon } from 'views/Home/components/V4CakeIcon'
 import { ZKSyncAirdropModalWithAutoPopup } from 'components/ClaimZksyncAirdropModal'
 import { useDataDogRUM } from 'hooks/useDataDogRUM'
 import { useLoadExperimentalFeatures } from 'hooks/useExperimentalFeatureEnabled'
+import useInitNotificationsClient from 'hooks/useInitNotificationsClient'
 import { useVercelFeatureFlagOverrides } from 'hooks/useVercelToolbar'
 import { useWeb3WalletView } from 'hooks/useWeb3WalletView'
 import { useInitGlobalWorker } from 'hooks/useWorker'
@@ -61,6 +62,7 @@ function GlobalHooks() {
   useSentryUser()
   useThemeCookie()
   useLockedEndNotification()
+  useInitNotificationsClient()
   return null
 }
 
@@ -70,6 +72,7 @@ function MPGlobalHooks() {
   useAccountEventListener()
   useSentryUser()
   useLockedEndNotification()
+  useInitNotificationsClient()
   return null
 }
 
@@ -91,7 +94,12 @@ function MyApp(props: AppProps<{ initialReduxState: any; dehydratedState: any }>
         <meta name="theme-color" content="#1FC7D4" />
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
-          <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />
+          <script
+            src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js"
+            integrity="sha256-Wqm2Zt2K4YzcLvvyBlJ3HMEQteIpnbt5dJgNDdahXBY="
+            crossOrigin="anonymous"
+            id="mp-webview"
+          />
         )}
       </Head>
       <DefaultSeo {...SEO} />

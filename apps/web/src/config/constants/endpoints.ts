@@ -11,7 +11,7 @@ export const API_NFT = 'https://nft.pancakeswap.com/api/v1'
 export const SNAPSHOT_API = `${SNAPSHOT_BASE_URL}/graphql`
 export const SNAPSHOT_HUB_API = `${SNAPSHOT_BASE_URL}/api/message`
 export const GRAPH_API_POTTERY = `${THE_GRAPH_PROXY_API}/pottery`
-// export const ONRAMP_API_BASE_URL = 'https://pcs-onramp-api.com'
+// export const ONRAMP_API_BASE_URL = 'https://monkfish-app-s4mda.ondigitalocean.app'
 export const ONRAMP_API_BASE_URL = 'https://onramp2-api.pancakeswap.com'
 export const TRANSAK_API_BASE_URL = 'https://api-stg.transak.com/api/v1'
 export const MOONPAY_BASE_URL = 'https://api.moonpay.com'
@@ -90,11 +90,6 @@ export const MERCURYO_WIDGET_ID = process.env.NEXT_PUBLIC_MERCURYO_WIDGET_ID || 
 export const MOONPAY_API_KEY = process.env.NEXT_PUBLIC_MOONPAY_LIVE_KEY || 'pk_test_1Ibe44lMglFVL8COOYO7SEKnIBrzrp54'
 
 export const TRANSAK_API_KEY = process.env.NEXT_PUBLIC_TRANSAK_LIVE_KEY || 'bf960e79-6d98-4fd0-823d-8409d290c346'
-// no need for extra public env
-export const MERCURYO_WIDGET_URL =
-  process.env.NODE_ENV === 'development'
-    ? 'https://sandbox-widget.mrcr.io/embed.2.0.js'
-    : 'https://widget.mercuryo.io/embed.2.0.js'
 
 export const WALLET_API = 'https://wallet-api.pancakeswap.com'
 
