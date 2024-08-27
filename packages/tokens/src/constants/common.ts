@@ -309,13 +309,6 @@ export const USDC = {
     'USDC',
     'USD Coin',
   ),
-  [ChainId.CRONOS_ZKEVM_TESTNET]: new ERC20Token(
-    ChainId.CRONOS_ZKEVM_TESTNET,
-    '0x8C424562336c1cCAB26638b8aFe7b7F633C6deDa',
-    6,
-    'vUSD',
-    'USD Coin',
-  ),
   [ChainId.GOERLI]: USDC_GOERLI,
   [ChainId.ZKSYNC]: new ERC20Token(
     ChainId.ZKSYNC,

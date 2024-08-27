@@ -4,8 +4,22 @@ import { FRTN, USDC } from './common'
 
 export const cronosZkEvmTestnetTokens = {
   wcro: WCRO[ChainId.CRONOS_ZKEVM_TESTNET],
-  usdc: USDC[ChainId.CRONOS_ZKEVM_TESTNET],
   frtn: FRTN[ChainId.CRONOS_ZKEVM_TESTNET],
+  vusd: new ERC20Token(
+    ChainId.CRONOS_ZKEVM_TESTNET,
+    '0x66c8221E5938A296D7542aB3D7cB856e789C06B2',
+    6,
+    'vUSD',
+    'Veno USD',
+  ),
+  veth: new ERC20Token(
+    ChainId.CRONOS_ZKEVM_TESTNET,
+    '0x8eb8f79CaB3A1c02F9A0Fc33A8E792625D6a240',
+    18,
+    'vETH',
+    'Veno ETH',
+    'https://ethereum.org',
+  ),
   red: new ERC20Token(
     ChainId.CRONOS_ZKEVM_TESTNET,
     '0xFD74cAbD5B009d24Aaed6293De322a2f5eF7892d',

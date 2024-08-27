@@ -71,7 +71,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.CRONOS]: [cronosTokens.wcro, cronosTokens.usdc, cronosTokens.frtn],
   [ChainId.CRONOS_TESTNET]: [cronosTestnetTokens.wcro, cronosTestnetTokens.usdc, cronosTestnetTokens.frtn],
   [ChainId.CRONOS_ZKEVM]: [cronosZkEvmTokens.wcro, cronosZkEvmTokens.frtn, cronosZkEvmTokens.vusd, cronosZkEvmTokens.veth],
-  [ChainId.CRONOS_ZKEVM_TESTNET]: [cronosZkEvmTestnetTokens.wcro, cronosZkEvmTestnetTokens.usdc, cronosZkEvmTestnetTokens.frtn],
+  [ChainId.CRONOS_ZKEVM_TESTNET]: [cronosZkEvmTestnetTokens.wcro, cronosZkEvmTestnetTokens.frtn],
   [ChainId.BSC]: [bscTokens.usdt, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.ARBITRUM_ONE]: [arbitrumTokens.weth, arbitrumTokens.usdt, arbitrumTokens.usdc],
