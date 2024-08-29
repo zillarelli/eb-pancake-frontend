@@ -20,4 +20,12 @@ export const cronosZkEvmTokens = {
     'Veno ETH',
     'https://ethereum.org',
   ),
+  cro: new ERC20Token(
+    ChainId.CRONOS_ZKEVM,
+    '0xBCaA34FF9D5BFD0d948b18Cf6Bf39a882F4a1cBD',
+    8,
+    'CRO',
+    'Cronos',
+    'https://www.crypto.org',
+  )
 }
