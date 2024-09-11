@@ -75,7 +75,7 @@ export const zRouterGetParams = z
     tradeType: true,
     amount: true,
     currency: true,
-    // candidatePools: true,
+    candidatePools: true,
   })
 
 export const zRouterPostParams = z
@@ -99,7 +99,7 @@ export const zRouterPostParams = z
     tradeType: true,
     amount: true,
     currency: true,
-    // candidatePools: true,
+    candidatePools: true,
   })
 
 export type RouterPostParams = z.infer<typeof zRouterPostParams>
